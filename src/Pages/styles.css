@@ -1,0 +1,91 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.upper {
+  height: 75vh;
+}
+.banner {
+  float: left;
+  clear: both;
+  width: 100%;
+  min-height: 65vh;
+  background: rgb(132, 12, 205);
+  background: linear-gradient(
+    45deg,
+    rgba(132, 12, 205, 0.9815251572327044) 13%,
+    rgba(24, 24, 201, 0.7425314465408805) 99%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  position: relative;
+  z-index: 1;
+}
+
+.banner svg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  
+}
+
+.downCard {
+  position: absolute;
+  top: 30%;
+  width: 40%;
+  height: 115%;
+  box-shadow: 0px 10px 10px rgb(210, 204, 204);
+  z-index: 1;
+  border-radius: 25px;
+}
+.head {
+padding: 1rem;
+  background-color: whitesmoke;
+  font-weight: 900;
+  color: rgb(88, 83, 83);
+  border-radius: 25px;
+}
+.profile_pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.uses_card {
+  overflow: scroll;
+  text-decoration: none;
+  color: gray;
+  margin-left: 2rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
