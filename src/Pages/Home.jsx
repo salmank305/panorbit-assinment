@@ -4,7 +4,7 @@ import "./styles.css";
 import { UserData } from "./UserData";
 function Home() {
   const [user, setUser] = useState();
-
+// salman
   useEffect(() => {
     const getData = () => {
       fetch("https://panorbit.in/api/users.json")
