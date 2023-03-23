@@ -4,20 +4,28 @@ import Home from "./Pages/Home";
 import { ToDo } from "./Pages/ToDo";
 import { Post } from "./Pages/Post";
 import { Profile } from "./Pages/Profile";
+import { createContext, useState } from "react";
+
+
+export const UserContext = createContext();
 
 function App() {
+  const [currUser, setCurrUser] = useState();
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/post" element={<Post />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/todo" element={<ToDo />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <UserContext.Provider value={{ currUser, setCurrUser }}>
+   {/* <div className="App">    */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/post" element={<Post />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/todo" element={<ToDo />} />
+          </Routes>
+        </BrowserRouter>
+      {/* </div> */}
+    </UserContext.Provider>
   );
 }
 

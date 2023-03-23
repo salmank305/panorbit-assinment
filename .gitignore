@@ -21,3 +21,64 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+import React, { useContext } from "react";
+import { UserContext } from "../App";
+import { Map } from "../MapDisplay/Map";
+import { Navbar } from "../Navbar/Navbar";
+import "./Profile.css";
+
+export const Profile = () => {
+  const { currUser } = useContext(UserContext);
+  // console.log("from profile page", currUser.name);
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-3 col-md-3 col-sm-12">
+            <Navbar />
+          </div>
+
+          <div
+            className="col-lg-3 col-md-5 col-sm-12 sec2"
+            style={{ marginTop: "5rem", textAlign: "center" }}
+          >
+            <hr style={{ width: "100%" }} />
+            <img
+              src={currUser?.profilepicture}
+              alt="profile pic"
+              style={{ width: "12rem", height: "12rem", borderRadius: "50%" }}
+            />
+            <p>{currUser?.name}</p>
+            <p>UserName:{currUser?.username}</p>
+            <p>Email:{currUser?.email}</p>
+            <p>Phone:999999999</p>
+            <p>Website:leannegraham.com</p>
+            <hr style={{ width: "100%" }} />
+            <p>Company</p>
+            <p>Name:Romaguera-Crona</p>
+            <p>catchphase : multi-layered client-server neural</p>
+            <p>bs : harness real-time e-markets</p>
+          </div>
+
+          <div
+            className="col-lg-6 col-md-4 col-sm-12 sec2"
+            style={{ marginTop: "5rem" }}
+          >
+            <hr style={{ width: "100%" }} />
+
+            <p>Address</p>
+            <p>Name:Romaguera-Crona</p>
+            <p>catchphase : multi-layered client-server neural</p>
+            <p>bs : harness real-time e-markets</p>
+
+            <Map lat={51.505} lng={-0.09} zoom={13} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

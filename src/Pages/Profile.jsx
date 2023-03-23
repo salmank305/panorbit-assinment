@@ -1,124 +1,177 @@
-// import React, { useEffect, useState } from "react";
-// import { NavLink } from "react-router-dom";
-// import "./Profile.css";
-
-// export const Profile = () => {
-//   return (
-//     <>
-//       <div className="row mainconitiner">
-//         <div className="navDiv">
-//           <nav
-//             className="navbar navbar-expand-lg navbar-light bs-side-navbar"
-//             style={{ backgroundColor: "#742DD2", borderRadius: "15px" }}
-//           >
-//             <div
-//               className="collapse navbar-collapse"
-//               id="navbarSupportedContent"
-//             >
-//               <NavLink className="myLink" to="/profile">
-//                 <div>Profile</div>
-//               </NavLink>
-//               <NavLink className="myLink" to="/post">
-//                 <div>Post</div>
-//               </NavLink>
-//               <NavLink className="myLink" to="/gallery">
-//                 <div>Gallery</div>
-//               </NavLink>
-//               <NavLink className="myLink" to="/todo">
-//                 <div>ToDo</div>
-//               </NavLink>
-//             </div>
-//           </nav>
-//         </div>
-
-//         <div className="col sec2">
-//           <img src="" alt="profile pic" />
-//           <p>leanne graham</p>
-//           <p>UserName:Bret</p>
-//           <p>Email:Sincere@april.biz</p>
-//           <p>Phone:999999999</p>
-//           <p>Website:leannegraham.com</p>
-
-//           <p>Company</p>
-//           <p>Name:Romaguera-Crona</p>
-//           <p>catchphase : multi-layered client-server neural</p>
-//           <p>bs : harness real-time e-markets</p>
-//         </div>
-//         <div className="col sec2">
-//           <p>Address</p>
-//           <p>Name:Romaguera-Crona</p>
-//           <p>catchphase : multi-layered client-server neural</p>
-//           <p>bs : harness real-time e-markets</p>
-//           <iframe
-//             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.39107485235!2d73.72107856029987!3d19.990944012930758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1679313690679!5m2!1sen!2sin"
-//             width="70%"
-//             height="400"
-//             style={{ border: 0, padding: "30px", marginTop: "2rem" }}
-//             allowFullScreen=""
-//             loading="lazy"
-//             referrerPolicy="no-referrer-when-downgrade"
-//           ></iframe>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
+import { Map } from "../MapDisplay/Map";
 import { Navbar } from "../Navbar/Navbar";
 import "./Profile.css";
 
 export const Profile = () => {
+  const { currUser } = useContext(UserContext);
+  // console.log("from profile page", currUser.name);
   return (
     <>
-      <div className="container-fluid">
-       
+      <div style={{ margin: "2rem" }}>
+        {/* main containear */}
         <div className="row">
+          {/*  containner 1*/}
+          {/* <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3"> */}
           <div className="col-lg-3 col-md-3 col-sm-12">
-            <Navbar/>
+            <Navbar />
           </div>
 
-          <div
-            className="col-lg-3 col-md-5 col-sm-12 sec2"
-            style={{ marginTop: "5rem",textAlign:"center" }}
-          >
-            <hr style={{ width: "100%" }} />
-            <img src="./assest/pro1.jpg" alt="profile pic" style={{width:"12rem",height:"12rem",borderRadius:"50%"}}/>
-            <p>leanne graham</p>
-            <p>UserName:Bret</p>
-            <p>Email:Sincere@april.biz</p>
-            <p>Phone:999999999</p>
-            <p>Website:leannegraham.com</p>
-            <hr style={{ width: "100%"}} />
-            <p>Company</p>
-            <p>Name:Romaguera-Crona</p>
-            <p>catchphase : multi-layered client-server neural</p>
-            <p>bs : harness real-time e-markets</p>
-          </div>
+          {/*  containner 2*/}
+          <div className="col-lg-9 col-md-9 col-sm-12">
+            <div
+              className="col-lg-12 col-md-12 col-sm-12 "
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
+              <p style={{ fontSize: "20px", fontWeight: "bold" }}>Profile</p>
+              <p>Login</p>
+            </div>
+            <hr />
 
-          <div
-            className="col-lg-6 col-md-4 col-sm-12 sec2"
-            style={{ marginTop: "5rem"}}
-          >
-            <hr style={{ width: "100%" }} />
+            <div
+              className="col-lg-12 col-md-12 col-sm-12"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
+              <div className="col-lg-5 col-md-5 col-sm-12">
+                <img
+                  src={currUser?.profilepicture}
+                  alt="profile pic"
+                  style={{
+                    width: "12rem",
+                    height: "12rem",
+                    borderRadius: "50%",
+                  }}
+                />
+                <h4>{currUser?.name}</h4>
+                <div style={{ textAlign: "start" }}>
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    UserName :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.username}
+                    </span>
+                  </p>
 
-            <p>Address</p>
-            <p>Name:Romaguera-Crona</p>
-            <p>catchphase : multi-layered client-server neural</p>
-            <p>bs : harness real-time e-markets</p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.39107485235!2d73.72107856029987!3d19.990944012930758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1679313690679!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0, padding: "30px", marginTop: "2rem" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    Email :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.email}
+                    </span>
+                  </p>
+
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    Phone :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.phone}
+                    </span>
+                  </p>
+
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    Website :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.website}
+                    </span>
+                  </p>
+
+                  <hr style={{ width: "100%" }} />
+
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      color: "gray",
+                      textAlign: "center",
+                    }}
+                  >
+                    Company
+                  </p>
+
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    Name :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.company.name}
+                    </span>
+                  </p>
+
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    catchphase :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.company.catchPhrase}
+                    </span>
+                  </p>
+
+                  <p style={{ fontSize: "20px", color: "gray" }}>
+                    bs :{" "}
+                    <span style={{ fontSize: "20px", color: "black" }}>
+                      {currUser?.company.bs}
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-lg-7 col-md-7 col-sm-12 ">
+                <div
+                  style={{
+                    borderLeft: "1px solid green",
+                    height: "80%",
+                    position: "absolute",
+                    left: "auto",
+                    marginLeft: "3rem",
+                    top: "auto",
+                  }}
+                ></div>
+                <div
+                  className="col-lg-12 col-md-12 col-sm-12 "
+                  style={{ marginLeft: "8rem" }}
+                >
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      color: "gray",
+                      textAlign: "left",
+                    }}
+                  >
+                    Address:
+                  </p>
+                  <div style={{ marginLeft: "3rem" }}>
+                    <p style={{ fontSize: "20px", color: "gray" }}>
+                      Street :{" "}
+                      <span style={{ fontSize: "20px", color: "black" }}>
+                        {currUser?.address.street}
+                      </span>
+                    </p>
+                    <p style={{ fontSize: "20px", color: "gray" }}>
+                      Suite :{" "}
+                      <span style={{ fontSize: "20px", color: "black" }}>
+                        {currUser?.address.suite}
+                      </span>
+                    </p>
+                    <p style={{ fontSize: "20px", color: "gray" }}>
+                      Zipcode :{" "}
+                      <span style={{ fontSize: "20px", color: "black" }}>
+                        {currUser?.address.zipcode}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="col-lg-12 col-md-12 col-sm-12 ">
+                  <Map lat={51.505} lng={-0.09} zoom={13} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 };
+
+
+

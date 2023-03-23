@@ -4,18 +4,43 @@ import { Navbar } from "../Navbar/Navbar";
 export const ToDo = () => {
   return (
     <>
-      <div className="container-fluid">
+      <div style={{ margin: "2rem" }}>
+        {/* main containear */}
         <div className="row">
+          {/*  containner 1*/}
           <div className="col-lg-3 col-md-3 col-sm-12">
             <Navbar />
           </div>
 
-          <div
-            className="col-lg-9 col-md-4 col-sm-12 sec2"
-            style={{ marginTop: "5rem" }}
-          >
-            <hr style={{ width: "100%" }} />
-          <div style={{marginTop:"22%",fontSize:"4rem",color:"gray"}}>Coming soon</div>
+          <div className="col-lg-9 col-md-3 col-sm-12">
+            <div
+              className="col-lg-12 col-md-3 col-sm-12"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
+              <p style={{ fontSize: "20px", fontWeight: "bold" }}>ToDo</p>
+              <p>Login</p>
+            </div>
+            <hr />
+
+            <div
+              className="col-lg-12 col-md-3 col-sm-12"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+               marginTop:"20%",
+               fontSize:"6rem",
+               fontWeight:"bolder",
+               color:"gray"
+
+              }}
+            >
+              Coming Soon
+            </div>
           </div>
         </div>
       </div>

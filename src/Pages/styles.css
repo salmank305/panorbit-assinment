@@ -47,11 +47,12 @@
   border-radius: 25px;
 }
 .head {
-padding: 1rem;
+  padding: 1rem;
   background-color: whitesmoke;
   font-weight: 900;
   color: rgb(88, 83, 83);
   border-radius: 25px;
+  text-align: center;
 }
 .profile_pic {
   width: 32px;
@@ -67,6 +68,7 @@ padding: 1rem;
   margin-left: 2rem;
   font-size: 18px;
   font-weight: 600;
+ 
 }
 
 /* Target the scrollbar */
