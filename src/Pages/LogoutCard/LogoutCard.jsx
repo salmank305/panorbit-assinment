@@ -91,17 +91,12 @@ export const LogoutCard = () => {
               </div>
                  <div
                   to="/"
-                  className="btn btn-danger rounded-pill "
+                  className="btn btn-danger rounded-pill mb-2 "
                   onClick={handleSwtich}
                 >
                   Logout
                 </div>
 
-              {/* 
-              <div className="d-flex m-2 p-2" onClick={handleSwtich}>
-        <img className="profile_pic" src={profilepicture} alt="profilePic" />
-        <div className="userName">{name}</div>
-      </div> */}
             </div>
           </div>
         )}

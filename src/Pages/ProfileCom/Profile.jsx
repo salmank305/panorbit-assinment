@@ -5,6 +5,7 @@ import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
 import { LogoutCard } from "../LogoutCard/LogoutCard";
+import Chat from "../ChatCom/Chat";
 
 export const Profile = () => {
   const { currUser } = useContext(UserContext);
@@ -189,15 +190,24 @@ export const Profile = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      gap:"1rem"
                     }}
                   >
-                    <p>
-                      Lat : <span>{currUser?.address.geo.lat}</span>
+                    <p style={{ fontSize: "15px", color: "gray" }}>
+                      Lat :{" "}
+                      <span style={{ fontSize: "15px", color: "black" }}>
+                        {currUser?.address.geo.lat}
+                      </span>
                     </p>
-                    <p>
-                      Lng : <span>{currUser?.address.geo.lng}</span>
+                    <p style={{ fontSize: "15px", color: "gray" }}>
+                      Long :{" "}
+                      <span style={{ fontSize: "15px", color: "black" }}>
+                        {currUser?.address.geo.lng}
+                      </span>
                     </p>
+                  
                   </div>
+                  <Chat/>
                 </div>
               </div>
             </div>
