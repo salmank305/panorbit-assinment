@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar } from '../Navbar/Navbar'
+import { LogoutCard } from './LogoutCard/LogoutCard'
 
 
 export const Gallery = () => {
@@ -23,7 +24,7 @@ export const Gallery = () => {
             }}
           >
             <p style={{ fontSize: "20px", fontWeight: "bold" }}>Gallery</p>
-            <p>Login</p>
+            <LogoutCard/>
           </div>
           <hr />
 

@@ -1,15 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import "./Navbar.css"
 export const Navbar = () => {
   return (
     <div>
         <nav
-              className="navbar navbar-expand-lg navbar-light bs-side-navbar"
+              className="navbar navbar-expand-lg navbar-light navList"
               style={{
-                backgroundColor: "#1c0ad4",
-                borderRadius: "15px",
+      
                 width: "16rem",
+          
               }}
             >
               <div

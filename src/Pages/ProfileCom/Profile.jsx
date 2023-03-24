@@ -1,15 +1,23 @@
 import React, { useContext } from "react";
-import { UserContext } from "../App";
-import { Map } from "../MapDisplay/Map";
-import { Navbar } from "../Navbar/Navbar";
+import { UserContext } from "../../App";
+import { Navbar } from "../../Navbar/Navbar";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
+
+import { LogoutCard } from "../LogoutCard/LogoutCard";
 
 export const Profile = () => {
   const { currUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
   // console.log("from profile page", currUser.name);
+
+  const handleLogout = () => {
+    navigate("/");
+  };
   return (
     <>
-      <div style={{ margin: "2rem" }}>
+      <div className="container" style={{ margin: "2rem" }}>
         {/* main containear */}
         <div className="row">
           {/*  containner 1*/}
@@ -29,7 +37,8 @@ export const Profile = () => {
               }}
             >
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>Profile</p>
-              <p>Login</p>
+
+              <LogoutCard />
             </div>
             <hr />
 
@@ -42,16 +51,18 @@ export const Profile = () => {
               }}
             >
               <div className="col-lg-5 col-md-5 col-sm-12">
-                <img
-                  src={currUser?.profilepicture}
-                  alt="profile pic"
-                  style={{
-                    width: "12rem",
-                    height: "12rem",
-                    borderRadius: "50%",
-                  }}
-                />
-                <h4>{currUser?.name}</h4>
+                <div style={{ textAlign: "center" }}>
+                  <img
+                    src={currUser?.profilepicture}
+                    alt="profile pic"
+                    style={{
+                      width: "12rem",
+                      height: "12rem",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <h4>{currUser?.name}</h4>
+                </div>
                 <div style={{ textAlign: "start" }}>
                   <p style={{ fontSize: "20px", color: "gray" }}>
                     UserName :{" "}
@@ -161,8 +172,32 @@ export const Profile = () => {
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-12 col-md-12 col-sm-12 ">
-                  <Map lat={51.505} lng={-0.09} zoom={13} />
+                <div
+                  className="col-lg-12 col-md-12 col-sm-12 "
+                  style={{ marginLeft: "8rem" }}
+                >
+                  <iframe
+                    width="80%"
+                    height="350"
+                    className={currUser?.address.Map}
+                    src={`https://maps.google.com/maps?q=${currUser?.address.street},t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                  ></iframe>
+                  {/* ---------- (geo)--------- */}
+                  <div
+                    className={currUser?.address.geo}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <p>
+                      Lat : <span>{currUser?.address.geo.lat}</span>
+                    </p>
+                    <p>
+                      Lng : <span>{currUser?.address.geo.lng}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,6 +207,3 @@ export const Profile = () => {
     </>
   );
 };
-
-
-

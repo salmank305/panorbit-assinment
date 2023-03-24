@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar } from '../Navbar/Navbar'
+import { LogoutCard } from './LogoutCard/LogoutCard'
 
 
 export const Post = () => {
@@ -23,7 +24,7 @@ export const Post = () => {
             }}
           >
             <p style={{ fontSize: "20px", fontWeight: "bold" }}>Post</p>
-            <p>Login</p>
+            <LogoutCard/>
           </div>
           <hr />
 

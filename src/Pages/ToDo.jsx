@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../Navbar/Navbar";
+import { LogoutCard } from "./LogoutCard/LogoutCard";
 
 export const ToDo = () => {
   return (
@@ -22,7 +23,7 @@ export const ToDo = () => {
               }}
             >
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>ToDo</p>
-              <p>Login</p>
+              <LogoutCard/>
             </div>
             <hr />
 

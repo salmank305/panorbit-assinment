@@ -1,0 +1,9 @@
+.cardScroll{
+    overflow: scroll;
+    text-decoration: none;
+    color: gray;
+    margin-left: 2rem;
+    font-size: 18px;
+    font-weight: 600;
+    height: 200px;
+}
