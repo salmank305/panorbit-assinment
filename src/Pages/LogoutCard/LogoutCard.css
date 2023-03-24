@@ -1,9 +1,16 @@
-.cardScroll{
-    overflow: scroll;
-    text-decoration: none;
-    color: gray;
-    margin-left: 2rem;
-    font-size: 18px;
-    font-weight: 600;
-    height: 200px;
+::-webkit-scrollbar {
+  display: none;
+}
+.cardScroll {
+  overflow: scroll;
+  text-decoration: none;
+  color: gray;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 150px;
+  margin-left: 2rem;
+}
+.logbtn{
+border-radius: 25px;
+margin: 2rem;
 }

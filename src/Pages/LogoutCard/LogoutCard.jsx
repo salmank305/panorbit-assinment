@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
 import { UserData } from "../UserData";
-import "./LogoutCard.css"
+import "./LogoutCard.css";
 export const LogoutCard = () => {
   const [showcard, setShowCard] = useState(false);
   const { currUser } = useContext(UserContext);
@@ -52,10 +52,10 @@ export const LogoutCard = () => {
           <div
             className="card"
             style={{
-              width: "18rem",
+              width: "20rem",
               marginTop: "2rem",
               position: "absolute",
-              zIndex: "1",
+              borderRadius:"10px"
             }}
           >
             <div
@@ -68,35 +68,36 @@ export const LogoutCard = () => {
                 src={currUser?.profilepicture}
                 alt="Card image cap"
                 style={{
-                  width: "5.5rem",
-                  height: "5.5rem",
+                  width: "5rem",
+                  height: "5rem",
                   borderRadius: "50%",
+                  marginTop:"1rem"
                 }}
               />
 
               <div
                 className="userName"
                 style={{
-                  fontSize: "1.2rem",
+                  fontSize: "1rem",
                 }}
               >
                 {currUser?.name}
               </div>
               <div className="userName">{currUser?.email}</div>
-              <div className="card-body cardScroll">
+              <hr />
+              <div className="card-body cardScroll" style={{textAlign:"center"}}>
                 {user?.map((ele) => {
                   return <UserData userDataCollection={ele} />;
                 })}
-             
               </div>
-                 <div
-                  to="/"
-                  className="btn btn-danger rounded-pill mb-2 "
-                  onClick={handleSwtich}
-                >
-                  Logout
-                </div>
 
+              <div
+                to="/"
+                className="btn btn-danger logbtn "
+                onClick={handleSwtich}
+              >
+                Logout
+              </div>
             </div>
           </div>
         )}

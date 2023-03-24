@@ -35,6 +35,7 @@ export const Profile = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 marginTop: "2rem",
+                
               }}
             >
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>Profile</p>
@@ -72,7 +73,7 @@ export const Profile = () => {
                     </span>
                   </p>
 
-                  <p style={{ fontSize: "20px", color: "gray" }}>
+                  <p style={{ fontSize: "20px", color: "gray"  }}>
                     Email :{" "}
                     <span style={{ fontSize: "20px", color: "black" }}>
                       {currUser?.email}
@@ -183,7 +184,7 @@ export const Profile = () => {
                     className={currUser?.address.Map}
                     src={`https://maps.google.com/maps?q=${currUser?.address.street},t=&z=13&ie=UTF8&iwloc=&output=embed`}
                   ></iframe>
-                  {/* ---------- (geo)--------- */}
+            
                   <div
                     className={currUser?.address.geo}
                     style={{

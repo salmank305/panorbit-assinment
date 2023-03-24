@@ -24,8 +24,11 @@ function Home() {
 
        <div className="uses_card">
        {user?.map((ele) => {
+        // console.log(ele);
           return <UserData userDataCollection={ele} />;
+          
         })}
+        
        </div>
 
       </div>
